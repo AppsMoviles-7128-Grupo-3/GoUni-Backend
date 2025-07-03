@@ -40,8 +40,8 @@ Update the database configuration in `src/main/resources/application.properties`
 
 ```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/gouni_db
-spring.datasource.username=your_username
-spring.datasource.password=your_password
+spring.datasource.username=root
+spring.datasource.password=tu password
 ```
 
 ### 3. Run the Application
