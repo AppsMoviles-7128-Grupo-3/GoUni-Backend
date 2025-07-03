@@ -15,7 +15,7 @@ Backend API for the GoUni ride-sharing platform for university students.
 - **Java 17**
 - **Spring Boot 3.5.3**
 - **Spring Data JPA**
-- **PostgreSQL**
+- **MySQL**
 - **SpringDoc OpenAPI (Swagger)**
 
 ## Prerequisites
@@ -28,10 +28,11 @@ Backend API for the GoUni ride-sharing platform for university students.
 
 ### 1. Database Setup
 
-Create a PostgreSQL database:
+Create a MySQL database:
 
+```
 ```sql
-CREATE DATABASE gouni_db;
+# CREATE DATABASE gouni_db;
 ```
 
 ### 2. Configuration
@@ -39,9 +40,9 @@ CREATE DATABASE gouni_db;
 Update the database configuration in `src/main/resources/application.properties`:
 
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/gouni_db
+spring.datasource.url=jdbc:mysql://localhost:3306/gouni_db?useSSL=false&serverTimezone=UTC
 spring.datasource.username=root
-spring.datasource.password=tu password
+spring.datasource.password=tu password crack
 ```
 
 ### 3. Run the Application
