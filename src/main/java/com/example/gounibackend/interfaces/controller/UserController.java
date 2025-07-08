@@ -32,9 +32,9 @@ public class UserController {
     public String forgotPassword(@RequestParam String email) {
         boolean exists = userService.emailExists(email);
         if (exists) {
-            return "Password reset link sent to " + email;
+            return "Correo enviado a " + email;
         } else {
-            return "Email not found";
+            return "Correo no encontrado";
         }
     }
 
@@ -42,9 +42,9 @@ public class UserController {
     public String resetPassword(@RequestParam String email, @RequestParam String newPassword) {
         boolean success = userService.resetPassword(email, newPassword);
         if (success) {
-            return "Password updated successfully";
+            return "Contraseña actualizada correctamente.";
         } else {
-            return "Failed to update password. Email not found.";
+            return "Error al actualizar la contraseña. Verifique el correo electrónico.";
         }
     }
 
