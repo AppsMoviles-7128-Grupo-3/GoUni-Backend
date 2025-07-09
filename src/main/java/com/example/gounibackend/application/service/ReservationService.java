@@ -21,19 +21,21 @@ public class ReservationService {
         return ReservationMapper.toDTO(saved);
     }
 
-    public ReservationDTO updateStatus(Long id, String status) {
-        Reservation reservation = reservationRepository.findById(id).orElse(null);
-        if (reservation == null) return null;
-        reservation.setStatus(Reservation.Status.valueOf(status));
-        Reservation saved = reservationRepository.save(reservation);
-        return ReservationMapper.toDTO(saved);
-    }
-
     public List<ReservationDTO> getByRouteId(Long routeId) {
         return reservationRepository.findByRouteId(routeId).stream().map(ReservationMapper::toDTO).collect(Collectors.toList());
     }
 
     public List<ReservationDTO> getByPassengerId(Long passengerId) {
         return reservationRepository.findByPassengerId(passengerId).stream().map(ReservationMapper::toDTO).collect(Collectors.toList());
+    }
+
+    public List<ReservationDTO> getByDriverId(Long driverId) {
+        // Find all routes owned by this driver
+        List<Long> routeIds = reservationRepository.findAllRouteIdsByDriverId(driverId);
+        // Find all reservations for these routes
+        return routeIds.stream()
+            .flatMap(routeId -> reservationRepository.findByRouteId(routeId).stream())
+            .map(ReservationMapper::toDTO)
+            .collect(Collectors.toList());
     }
 } 

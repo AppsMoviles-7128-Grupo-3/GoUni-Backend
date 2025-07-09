@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface RouteJpaRepository extends JpaRepository<Route, Long>, RouteRepository {
-    List<Route> findByDriverId(Long driverId);
+    List<Route> findByUserId(Long userId);
 } 

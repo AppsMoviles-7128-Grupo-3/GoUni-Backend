@@ -47,7 +47,7 @@ public class RouteService {
         return routeRepository.findAll().stream().map(RouteMapper::toDTO).collect(Collectors.toList());
     }
 
-    public List<RouteDTO> getByDriverId(Long driverId) {
-        return routeRepository.findByDriverId(driverId).stream().map(RouteMapper::toDTO).collect(Collectors.toList());
+    public List<RouteDTO> getByUserId(Long userId) {
+        return routeRepository.findByUserId(userId).stream().map(RouteMapper::toDTO).collect(Collectors.toList());
     }
 } 

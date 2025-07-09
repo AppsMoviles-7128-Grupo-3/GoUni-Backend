@@ -38,8 +38,8 @@ public class RouteController {
         return routeService.getAll();
     }
 
-    @GetMapping("/driver/{driverId}")
-    public List<RouteDTO> getByDriverId(@PathVariable Long driverId) {
-        return routeService.getByDriverId(driverId);
+    @GetMapping("/user/{userId}")
+    public List<RouteDTO> getByUserId(@PathVariable Long userId) {
+        return routeService.getByUserId(userId);
     }
 } 

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class RouteDTO {
     private Long id;
-    private Long driverId;
+    private Long userId;
     private Long carId;
     private String start;
     private String end;
@@ -14,13 +14,15 @@ public class RouteDTO {
     private LocalTime arrivalTime;
     private Integer availableSeats;
     private Double price;
+    private java.time.LocalDateTime createdAt;
+    private java.time.LocalDateTime updatedAt;
 
     public RouteDTO() {}
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
-    public Long getDriverId() { return driverId; }
-    public void setDriverId(Long driverId) { this.driverId = driverId; }
+    public Long getUserId() { return userId; }
+    public void setUserId(Long userId) { this.userId = userId; }
     public Long getCarId() { return carId; }
     public void setCarId(Long carId) { this.carId = carId; }
     public String getStart() { return start; }
@@ -37,4 +39,8 @@ public class RouteDTO {
     public void setAvailableSeats(Integer availableSeats) { this.availableSeats = availableSeats; }
     public Double getPrice() { return price; }
     public void setPrice(Double price) { this.price = price; }
+    public java.time.LocalDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(java.time.LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public java.time.LocalDateTime getUpdatedAt() { return updatedAt; }
+    public void setUpdatedAt(java.time.LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
 } 

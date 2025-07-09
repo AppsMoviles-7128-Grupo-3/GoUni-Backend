@@ -8,13 +8,8 @@ public class ReservationMapper {
         ReservationDTO dto = new ReservationDTO();
         dto.setId(reservation.getId());
         dto.setRouteId(reservation.getRouteId());
+        dto.setDriverId(reservation.getDriverId());
         dto.setPassengerId(reservation.getPassengerId());
-        dto.setStudentName(reservation.getStudentName());
-        dto.setAge(reservation.getAge());
-        dto.setMeetingPlace(reservation.getMeetingPlace());
-        dto.setUniversityId(reservation.getUniversityId());
-        dto.setProfilePhoto(reservation.getProfilePhoto());
-        dto.setStatus(reservation.getStatus().name());
         return dto;
     }
 
@@ -22,13 +17,8 @@ public class ReservationMapper {
         Reservation reservation = new Reservation();
         reservation.setId(dto.getId());
         reservation.setRouteId(dto.getRouteId());
+        reservation.setDriverId(dto.getDriverId());
         reservation.setPassengerId(dto.getPassengerId());
-        reservation.setStudentName(dto.getStudentName());
-        reservation.setAge(dto.getAge());
-        reservation.setMeetingPlace(dto.getMeetingPlace());
-        reservation.setUniversityId(dto.getUniversityId());
-        reservation.setProfilePhoto(dto.getProfilePhoto());
-        reservation.setStatus(Reservation.Status.valueOf(dto.getStatus()));
         return reservation;
     }
 } 

@@ -7,7 +7,7 @@ import java.util.List;
 public interface RouteRepository {
     Route save(Route route);
     Optional<Route> findById(Long id);
-    List<Route> findByDriverId(Long driverId);
+    List<Route> findByUserId(Long userId);
     List<Route> findAll();
     void deleteById(Long id);
 } 

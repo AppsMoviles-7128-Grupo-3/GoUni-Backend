@@ -11,4 +11,5 @@ public interface ReservationRepository {
     List<Reservation> findByPassengerId(Long passengerId);
     List<Reservation> findAll();
     void deleteById(Long id);
+    List<Long> findAllRouteIdsByDriverId(Long driverId);
 } 
